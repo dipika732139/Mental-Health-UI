@@ -1,0 +1,39 @@
+.title{
+  margin-left: 12%;
+  font-family: 'font-family: Brush Script MTh';
+  width:25%;
+  justify-content: center;
+}
+  .img {
+    width: 100%;
+    margin-bottom: 18%;
+  }
+  .card-picture {
+    width: 23%;
+    margin-bottom: 2%;
+  }
+  .container {
+    min-height: 100%;
+    width: 100%;
+  }
+  .search-form {
+    width: 90%;
+  }
+
+  .cardstyle{
+    padding:5px;
+      background-color:transparent !important;
+      box-shadow: rgba(0, 0, 0, 0.25) 0px 10px 24px 4px;
+      margin-right: 10%;
+      margin-left: 10%;
+      margin-top: 10%;
+      width: 28%;
+      height: 15% !important;
+  }
+
+  .layout{
+    margin-left:10%
+  }
+  .backgroundstyle{
+    backdrop-filter: blur(5px);
+  }

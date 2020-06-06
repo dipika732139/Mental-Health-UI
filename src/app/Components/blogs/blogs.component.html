@@ -1,0 +1,26 @@
+<div class="backgroundstyle" style="background-image: url(assets/images/background.jpg);  
+background-repeat: repeat;  background-size:100%,100%;">
+<header class="title">
+  <br><br><br><br>
+  <h3 style="font-size:40px">OUR BLOGS</h3>
+  <p style="font-size: 30px ">Reading adds years to life.</p>
+  <br><br>
+</header>
+<div  class="layout" fxLayout="row wrap" fxLayout.lt-sm="column" fxLayoutWrap fxLayoutGap="5%" fxLayoutAlign="flex-start">
+  <mat-card class="cardstyle" style="background-color:transparent ;" fxFlex="0 1 calc(20%)" fxFlex.lt-md="0 1 calc(20%)" fxFlex.lt-sm="100%"  class="card-picture" *ngFor="let picture of pictures">
+    <mat-card-title fxLayout.gt-xs="row" fxLayout.xs="column">
+    <span fxFlex="80%"  style="font-family: Brush Script MT; font-size:large; font-style:bold;">{{picture.title}}</span>
+    </mat-card-title>
+    <img mat-card-image src="{{picture.img}}">
+    <mat-card-content>
+      <p  style="font-family: Brush Script MT; font-size:medium">
+        {{picture.msg}}
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button>LIKE</button>
+      <button mat-button>SHARE</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+</div> 
