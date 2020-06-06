@@ -11,7 +11,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule } from '@angular/forms';
-
+import { HttpClientModule } from "@angular/common/http";
 
 import { AppComponent } from './app.component';
 import { BlogsComponent } from './Components/blogs/blogs.component';
@@ -58,6 +58,7 @@ import { VideosComponent } from './Components/videos/videos.component';
     FlexLayoutModule,
     MatFormFieldModule,
     FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

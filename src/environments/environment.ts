@@ -3,7 +3,19 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  baseUrl:"https://localhost:44340",
+  userRegistrationApi : {
+    route:"/api/User",
+    signUpEndpoint:"/SignUp",
+    loginEndpoint:"/Login"
+  },
+  mentalHealthTestApi:{
+    route:"/api/mentalHealthTest",
+    getQuestionEndpoint:"/question/",
+    saveAnswerEndpoint:"/answer",
+    getResultEndpoint:"/result/"
+  }
 };
 
 /*
