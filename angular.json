@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "Mental-Health-UI"
+    }
+  },
+  "defaultProject": "Mental-Health-UI",
+  "cli": {
+    "analytics": "dcd0cec7-8b79-4d65-9a42-a9ab2ab84dea"
+  }
 }
