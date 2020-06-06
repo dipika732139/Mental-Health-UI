@@ -12,4 +12,21 @@ export class MusicComponent implements OnInit {
   ngOnInit(): void {
   }
 
+ //showing sections booleans
+ public div1: boolean= true;
+ public music :boolean=false;
+
+ //showing sections transitions booleans
+ public transition5show: boolean= false;
+
+#region 
+     showMusicTransition(): void {
+     this.div1=false;
+     this.transition5show=true; 
+   }
+   showMusic(): void {
+     this.transition5show=false;
+     this.music=true;
+   }
+
 }

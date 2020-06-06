@@ -206,8 +206,32 @@
     size:12px !important;
     font-weight: bolder !important;
   }
+
+  .fontStyle_white{
+    font-family: 'Dancing Script', cursive !important;
+    color: white;
+    font-weight: bolder !important;
+  }
+
   .fontStyle_small{
     color: black;
     size:6px !important;
     font-family: 'Montaga', serif !important;
   }
+
+  
+  .cardstyle{
+    padding:5px;
+      background-color:transparent !important;
+      box-shadow: rgba(0, 0, 0, 0.25) 0px 10px 24px 4px;
+      margin-right: 10%;
+      margin-left: 10%;
+      margin-top: 10%;
+      width: 28%;
+      height: 15% !important;
+  }
+
+  .layout{
+    margin-left:10%
+  }
+

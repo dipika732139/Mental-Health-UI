@@ -12,4 +12,27 @@ export class VideosComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  //showing sections booleans
+  public div1: boolean= true;
+  public videos: boolean= false;
+
+  //showing sections transitions booleans
+  public transition2show: boolean= false;
+  public transition3show: boolean= false;
+
+#region 
+    showVideosTransition(): void {
+      this.div1=false;
+      this.transition2show=true; 
+    }
+    showWorkoutTransition(): void {
+      this.transition2show=false; 
+      this.transition3show=true; 
+    }
+    showVideos(): void {
+      this.transition3show=false;
+      this.videos=true;
+    } 
+#endregion
+
 }

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {DomSanitizer} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-stressmgmt',
@@ -129,7 +128,43 @@ export class StressmgmtComponent implements OnInit {
 #endregion
 
 
-
+pictures = [
+  {
+    id : 1,
+    title :'Gift Of Light',
+    img : '../../assets/images/small1.jpg',
+    msg : 'Didn\'t we all need darkness to find a way towards light?'
+  },
+  {
+    id : 2,
+    title :'Being there',
+    img : '../../assets/images/small2.jpg',
+    msg : '"You\'re unbeatable on your journey till you choose to quit",said Coach Carter'
+  },
+  {
+    id : 3,
+    title :'Finding Home',
+    img : '../../assets/images/small3.jpg',
+    msg : 'She traveled the whole world only to find peace back at the place she had lost it'
+  },
+  {
+    id :4, 
+    title :'Pursuit of Wings',
+    img : '../../assets/images/small4.jpg',
+    msg : 'There was something in Jimmy\'s eyes that day. He wanted to touch the clouds'
+  },
+  {
+    id :5,
+    title :'The Princess of 5',
+    img : '../../assets/images/small5.jpg',
+    msg : 'That expression was of resolve.Lizzy was not coming back till she found her father'
+  },
+  {
+    id :6,
+    title :'Citylights',
+    img : '../../assets/images/small6.jpg',
+    msg : 'Christmas had its own way of lighting up lives and touching hearts'
+  }]
 
 
   /* 

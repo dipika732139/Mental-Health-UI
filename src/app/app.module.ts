@@ -11,8 +11,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule } from '@angular/forms';
+import { ChatModule } from './chat/chat.module';
 import { HttpClientModule } from "@angular/common/http";
-
 import { AppComponent } from './app.component';
 import { BlogsComponent } from './Components/blogs/blogs.component';
 import { MusicComponent } from './Components/music/music.component';
@@ -64,6 +64,7 @@ import { ResultComponent } from './Components/selfassessment/assessment/result/r
     FlexLayoutModule,
     MatFormFieldModule,
     FormsModule,
+    ChatModule,
     HttpClientModule
   ],
   providers: [],
