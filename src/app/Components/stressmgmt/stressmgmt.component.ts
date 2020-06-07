@@ -32,7 +32,7 @@ export class StressmgmtComponent implements OnInit {
   public music :boolean=false;
   public todolist: boolean= false;
   public talk: boolean= false;
-
+  public muteMusic :boolean =true;
   //showing sections transitions booleans
   public transition1show: boolean= false;
   public transition2show: boolean= false;
@@ -47,6 +47,9 @@ export class StressmgmtComponent implements OnInit {
       this.div2=false;
       this.transition1show=false;
       this.div1=true;
+    }
+    toggleMute():void{
+      this.muteMusic=!this.muteMusic
     }
     showSuggestionsTransition(): void {
       this.div1=false;
