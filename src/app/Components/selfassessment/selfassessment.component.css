@@ -77,7 +77,14 @@
     text-decoration: none;
     font-family: "Brush Script MT" !important;
   }
-  
+  .yellow{
+    background: #041b18;
+    color:rgb(157, 182, 17);
+    font-size:1.2rem;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    font-family: "Brush Script MT" !important;
+  }
   .section{
     padding:20px 0;
   }
@@ -92,4 +99,9 @@
       padding-right:3rem;
       padding-left:3rem;
     }
+  }
+  .center {
+    margin: auto;
+    width: 100%;
+    padding: 10px;
   }

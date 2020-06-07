@@ -21,10 +21,18 @@
           <button mat-button class="btn" (click)="DepressionTransition()">Take depression test</button>
           <button mat-button class="btn" style="float: right" (click)="StressTransition()">Take stress test</button>
         </mat-card-actions>
+        <br>
+        <br>
+        <mat-card-actions>
+          <button mat-button class="btn yellow">Need a mood therapy?  Come along with me</button>
+        </mat-card-actions>
       </div>
-      <app-assessment *ngIf="displayAnxiety" [testType]="testType" [displayTitle]="anxietyTestTitle" (close)="CloseAssesmmentHandler($event)"></app-assessment>
-      <app-assessment *ngIf="displayDepression" [testType]="testType" [displayTitle]="depressionTestTitle" (close)="CloseAssesmmentHandler($event)"></app-assessment>
-      <app-assessment *ngIf="displayStress" [testType]="testType" [displayTitle]="stressTestTitle" (close)="CloseAssesmmentHandler($event)"></app-assessment>
+      <div class="center">
+        <app-assessment *ngIf="displayAnxiety" [testType]="testType" [displayTitle]="anxietyTestTitle" (close)="CloseAssesmmentHandler($event)"></app-assessment>
+        <app-assessment *ngIf="displayDepression" [testType]="testType" [displayTitle]="depressionTestTitle" (close)="CloseAssesmmentHandler($event)"></app-assessment>
+        <app-assessment *ngIf="displayStress" [testType]="testType" [displayTitle]="stressTestTitle" (close)="CloseAssesmmentHandler($event)"></app-assessment>
+      
+      </div>
     </div>
     </header>
 </body>
