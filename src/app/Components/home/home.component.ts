@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {GlobalService} from '../../Services/global.service'
 
 @Component({
   selector: 'app-home',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private globalService : GlobalService) { }
 
   ngOnInit(): void {
+    this.isMusicOn=this.globalService.isMusicOn
+  }
+  public isMusicOn :boolean 
+  
+  toggleMusic():void{
+    this.globalService.toggleMusic();
+    this.isMusicOn=this.globalService.isMusicOn
   }
 
 }
