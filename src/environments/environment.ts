@@ -13,7 +13,7 @@ export const environment = {
   mentalHealthTestApi:{
     route:"/api/mentalHealthTest",
     getQuestionEndpoint:"/question",
-    saveAnswerEndpoint:"/answer",
+    saveAnswerEndpoint:"/answer/",
     getResultEndpoint:"/result/"
   }
 };

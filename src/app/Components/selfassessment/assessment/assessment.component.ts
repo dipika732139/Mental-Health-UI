@@ -2,6 +2,8 @@ import { Component, OnInit ,Input,EventEmitter,Output } from '@angular/core';
 import {GlobalService} from '../../../Services/global.service'
 import {MentalHealthTestService} from '../../../Services/mental-health-test.service'
 import {QuestionRequest} from "../../../Models/Test/question-request"
+import {AnswerRequest} from "../../../Models/Test/answer-request"
+import {ResultRequest} from "../../../Models/Test/result-request"
 import { Option } from 'src/app/Models/Test/option';
 @Component({
   selector: 'app-assessment',
@@ -21,7 +23,13 @@ export class AssessmentComponent implements OnInit {
   public questionNumber:number 
   public question: string ;
   public options:Option[] 
+  public selectedOptionNumber : number
+  public moodImageUrl:string
+  public score:number
+  public description : string
+  public summary:string
   ngOnInit(): void {
+    this.globalService.setUserId("DIPIKA")
     this.ShowMain()
   }
   OnClose(){
@@ -38,11 +46,17 @@ export class AssessmentComponent implements OnInit {
     this.sumitAnswer()
     this.GetQuestion()
   }
+  SelectedOptionHandler(optionNumber : number ){
+    this.selectedOptionNumber=optionNumber
+  }
   sumitAnswer(){
-    //code to post answer
+    var request = new AnswerRequest(this.globalService.getUserId(),this.globalService.getTestType(),this.questionNumber-1,this.selectedOptionNumber);
+    this.testService.SaveAnswer(request,this.globalService.testId).subscribe(
+      response=>{
+      }
+    )
   }
   GetQuestion(){
-    console.log(this.questionNumber)
     var request = new QuestionRequest(this.globalService.getTestType(),this.questionNumber)
     this.testService.GetQuestion(request).subscribe(
       response=>{
@@ -58,6 +72,15 @@ export class AssessmentComponent implements OnInit {
     this.questionNumber++;
   }
   EndTest(){
+    var request=new ResultRequest(this.globalService.getUserId(),this.globalService.getTestType())
+    this.testService.GetResult(request,this.globalService.getTestId()).subscribe(
+      response=>{
+        this.moodImageUrl=response.moodImageUrl
+        this.score=response.score
+        this.description=response.description
+        this.summary=response.summary
+      }
+    )
     this.ShowResult()
   }
 
