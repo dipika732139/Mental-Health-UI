@@ -75,10 +75,18 @@ export class AssessmentComponent implements OnInit {
     var request=new ResultRequest(this.globalService.getUserId(),this.globalService.getTestType())
     this.testService.GetResult(request,this.globalService.getTestId()).subscribe(
       response=>{
-        this.moodImageUrl=response.moodImageUrl
-        this.score=response.score
-        this.description=response.description
-        this.summary=response.summary
+        if(response.moodImageUrl!=null){
+          this.moodImageUrl=response.moodImageUrl
+          this.score=response.score
+          this.description=response.description
+          this.summary=response.summary
+        }
+        else{
+          this.summary="Since you have not taken any test. There is no result to display"
+        }
+      },
+      err=>{
+        this.summary="Opps you have ended the test. There is no result to display"
       }
     )
     this.ShowResult()
