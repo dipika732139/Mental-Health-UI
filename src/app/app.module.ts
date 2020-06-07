@@ -26,7 +26,10 @@ import { HomeComponent } from './Components/home/home.component';
 import { PagenotfoundComponent } from './ErrorHandlers/pagenotfound/pagenotfound.component';
 import { NopermissionsComponent } from './ErrorHandlers/nopermissions/nopermissions.component';
 import { StressmgmtComponent } from './Components/stressmgmt/stressmgmt.component';
+import { AssessmentComponent } from './Components/selfassessment/assessment/assessment.component';
 import { VideosComponent } from './Components/videos/videos.component';
+import { QuestionComponent } from './Components/selfassessment/assessment/question/question.component';
+import { ResultComponent } from './Components/selfassessment/assessment/result/result.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +46,10 @@ import { VideosComponent } from './Components/videos/videos.component';
     PagenotfoundComponent,
     NopermissionsComponent,
     StressmgmtComponent,
-    VideosComponent
+    VideosComponent,
+    AssessmentComponent,
+    QuestionComponent,
+    ResultComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,18 @@
+
+<div class="header-content text-md-center" *ngIf="displaymain">
+    <p>{{displayTitle}} test</p>
+    <button mat-button  color="success" style="float: left" (click)="StartTest()">Take test</button>
+    <button mat-button  color="success" style="float: right" (click)="OnClose()">Close</button>
+</div>
+<div *ngIf="displayQuestion">
+<app-question [question]="question" [options]="options" *ngIf="hasQuestion" ></app-question>
+<div *ngIf="!hasQuestion" > No more questions</div>
+<br>
+<button mat-button  color="success" style="float: left" *ngIf="hasQuestion" (click)="SubmitAndNextQuestion()">Submit</button>
+<button mat-button  color="success" style="float: right" (click)="EndTest()">End Test</button>
+</div>
+<div *ngIf="displayResult">
+<app-result></app-result>
+<br>
+<button mat-button  color="success" style="float: right" (click)="OnClose()">Close</button>
+</div>

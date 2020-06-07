@@ -23,7 +23,7 @@ export class MentalHealthTestService {
     private http: HttpClient
   ) { }
   GetQuestion(questionRequest:QuestionRequest):Observable<QuestionResponse>{
-    return this.http.put<QuestionResponse>(this.getUrl(environment.mentalHealthTestApi.getQuestionEndpoint), questionRequest, {
+    return this.http.post<QuestionResponse>(this.getUrl(environment.mentalHealthTestApi.getQuestionEndpoint), questionRequest, {
       headers: this.headers
     }).pipe(
       retry(1),
@@ -31,7 +31,7 @@ export class MentalHealthTestService {
     );
   }
   GetResult(resultRequest:ResultRequest,testId:string):Observable<ResultResponse>{
-    return this.http.put<ResultResponse>(this.getUrl(environment.mentalHealthTestApi.getResultEndpoint+testId), resultRequest, {
+    return this.http.post<ResultResponse>(this.getUrl(environment.mentalHealthTestApi.getResultEndpoint+testId), resultRequest, {
       headers: this.headers
     }).pipe(
       retry(1),
@@ -39,7 +39,7 @@ export class MentalHealthTestService {
     );
   }
   SaveAnswer(answerRequest:AnswerRequest , testId:string):Observable<AnswerResponse>{
-    return this.http.put<AnswerResponse>(this.getUrl(environment.mentalHealthTestApi.saveAnswerEndpoint+testId), answerRequest, {
+    return this.http.post<AnswerResponse>(this.getUrl(environment.mentalHealthTestApi.saveAnswerEndpoint+testId), answerRequest, {
       headers: this.headers
     }).pipe(
       retry(1),

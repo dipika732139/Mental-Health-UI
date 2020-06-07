@@ -1,0 +1,31 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    </head>
+    <body>
+    <header class="v-header container">
+    <div class="fullscreen-video-wrap">
+      <video src="../../assets/images/homepage.mp4" autoplay="" loop="">
+    </video>
+    </div>
+    <div class="header-overlay"></div>
+    <div class="header-content text-md-center">
+      <div *ngIf="displayMain">
+        <h1>Hi Homo Sapien!</h1>
+        <br>
+        <p>I'm Alive. I just wanted to know how are you feeling buddy? Alive? Tired? Or just in a mess?!.. Do you want to spend sometime with me buddy!</p>
+        <mat-card-actions>
+          <button mat-button class="btn" style="float: left" (click)="AnxietyTransition()">Take anxiety test</button>
+          <button mat-button class="btn" (click)="DepressionTransition()">Take depression test</button>
+          <button mat-button class="btn" style="float: right" (click)="StressTransition()">Take stress test</button>
+        </mat-card-actions>
+      </div>
+      <app-assessment *ngIf="displayAnxiety" [testType]="testType" [displayTitle]="anxietyTestTitle" (close)="CloseAssesmmentHandler($event)"></app-assessment>
+      <app-assessment *ngIf="displayDepression" [testType]="testType" [displayTitle]="depressionTestTitle" (close)="CloseAssesmmentHandler($event)"></app-assessment>
+      <app-assessment *ngIf="displayStress" [testType]="testType" [displayTitle]="stressTestTitle" (close)="CloseAssesmmentHandler($event)"></app-assessment>
+    </div>
+    </header>
+</body>
+    </html>
