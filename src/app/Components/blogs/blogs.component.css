@@ -20,6 +20,10 @@
     width: 90%;
   }
 
+  .mat-success {
+    background-color: black;
+    color: #fff;
+}
   .cardstyle{
     padding:5px;
       background-color:transparent !important;

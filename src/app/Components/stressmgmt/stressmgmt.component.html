@@ -10,7 +10,7 @@
 
 
     <body>
-      <audio autoplay *ngIf="muteMusic">
+      <audio autoplay *ngIf="isMusicOn">
         <source src="../../assets/owlcity.mp3" type="audio/mpeg">
       </audio>
       <header class="v-header container">
@@ -27,8 +27,8 @@
           <button mat-button class="btn" (click)="showSuggestionsTransition()">Come along with me.</button>    
           <br>  
           <br>  
-          <button mat-button (click)="toggleMute()" color="success" *ngIf="muteMusic">Stop Music</button>
-          <button mat-button (click)="toggleMute()" color="success" *ngIf="!muteMusic">Play Music</button>
+          <button mat-button (click)="toggleMusic()" color="success" *ngIf="isMusicOn">Stop Music</button>
+          <button mat-button (click)="toggleMusic()" color="success" *ngIf="!isMusicOn">Play Music</button>
         </div>
   
         <!--transition before stress management choice-->

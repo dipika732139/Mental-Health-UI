@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {GlobalService} from '../../Services/global.service'
 
 @Component({
   selector: 'app-music',
@@ -7,14 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MusicComponent implements OnInit {
 
-  constructor() { }
+  constructor(private globalService : GlobalService) { }
 
   ngOnInit(): void {
+    this.isMusicOn=this.globalService.isMusicOn
   }
 
  //showing sections booleans
  public div1: boolean= true;
  public music :boolean=false;
+ public isMusicOn :boolean 
 
  //showing sections transitions booleans
  public transition5show: boolean= false;
@@ -24,6 +27,10 @@ export class MusicComponent implements OnInit {
      this.div1=false;
      this.transition5show=true; 
    }
+   toggleMusic():void{
+    this.globalService.toggleMusic();
+    this.isMusicOn=this.globalService.isMusicOn
+  }
    showMusic(): void {
      this.transition5show=false;
      this.music=true;

@@ -10,7 +10,7 @@
 
 
     <body>
-      <audio autoplay>
+      <audio autoplay *ngIf="isMusicOn">
         <source src="../../assets/owlcity.mp3" type="audio/mpeg">
       </audio>
       <header class="v-header container">
@@ -27,6 +27,10 @@
             read each other's side of stories... And know.. that we will all emerge out stronger.. wiser and brighter..
           </p>
           <button mat-button class="btn" (click)="showBooksTransition()">Come along with me.</button>
+          <br>  
+          <br>  
+          <button mat-button (click)="toggleMusic()" color="success" *ngIf="isMusicOn">Stop Music</button>
+          <button mat-button (click)="toggleMusic()" color="success" *ngIf="!isMusicOn">Play Music</button>
         </div>
 
         <!--transition before books section-->

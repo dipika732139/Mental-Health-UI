@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { trigger,state,style,transition,animate } from '@angular/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import {GlobalService} from '../../Services/global.service'
 
 @Component({
   selector: 'app-blogs',
@@ -10,15 +11,16 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 })
 export class BlogsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private globalService : GlobalService) { }
 
   ngOnInit(): void {
+    this.isMusicOn=this.globalService.isMusicOn
   }
   
   //showing sections booleans
   public div1: boolean= true;
   public books: boolean= false;
-
+  public isMusicOn :boolean 
   //showing sections transitions booleans
   public transition4show: boolean= false;
 
@@ -26,6 +28,10 @@ export class BlogsComponent implements OnInit {
    showBooksTransition(): void {
       this.div1=false;
       this.transition4show=true; 
+    }
+    toggleMusic():void{
+      this.globalService.toggleMusic();
+      this.isMusicOn=this.globalService.isMusicOn
     }
     showBooks(): void {
       this.transition4show=false;

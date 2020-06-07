@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import {GlobalService} from '../../Services/global.service'
 @Component({
   selector: 'app-stressmgmt',
   templateUrl: './stressmgmt.component.html',
@@ -9,12 +9,13 @@ import { Component, OnInit } from '@angular/core';
 
 export class StressmgmtComponent implements OnInit {
 
-  constructor() { 
+  constructor(private globalService : GlobalService) { 
     this.newTodo = '';
     this.todos = [];
   }
 
   ngOnInit(): void {
+    this.isMusicOn=this.globalService.isMusicOn
   }
 
   //for the to dos list
@@ -31,7 +32,7 @@ export class StressmgmtComponent implements OnInit {
   public music :boolean=false;
   public todolist: boolean= false;
   public talk: boolean= false;
-  public muteMusic :boolean =true;
+  public isMusicOn :boolean 
   //showing sections transitions booleans
   public transition1show: boolean= false;
   public transition2show: boolean= false;
@@ -47,8 +48,9 @@ export class StressmgmtComponent implements OnInit {
       this.transition1show=false;
       this.div1=true;
     }
-    toggleMute():void{
-      this.muteMusic=!this.muteMusic
+    toggleMusic():void{
+      this.globalService.toggleMusic();
+      this.isMusicOn=this.globalService.isMusicOn
     }
     showSuggestionsTransition(): void {
       this.div1=false;

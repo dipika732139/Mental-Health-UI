@@ -123,5 +123,8 @@
       }
     }
   },
-  "defaultProject": "Alive"
+  "defaultProject": "Alive",
+  "cli": {
+    "analytics": "ed3179e7-dcec-4e2b-bd0a-504aeed56592"
+  }
 }

@@ -7,7 +7,8 @@ import { Observable } from 'rxjs';
 export class GlobalService {
 
   constructor() { }
-  userId : string
+  isMusicOn:boolean = true
+  userId : string = "DIPIKA"
   testId : string
   testType : string
   getUserId():string{
@@ -16,7 +17,9 @@ export class GlobalService {
   setUserId(id : string){
     this.userId=id
   }
-
+toggleMusic(){
+  this.isMusicOn=!this.isMusicOn
+}
   getTestId():string{
     return this.testId;
   }

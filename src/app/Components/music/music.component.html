@@ -10,7 +10,7 @@
 
 
     <body>
-      <audio autoplay>
+      <audio autoplay *ngIf="isMusicOn">
         <source src="../../assets/owlcity.mp3" type="audio/mpeg">
       </audio>
       <header class="v-header container">
@@ -25,6 +25,10 @@
           <br>
           <p>Life is one grand song.. So I thought why not start the music!</p>
           <button mat-button class="btn" (click)="showMusicTransition()">Come along with me.</button>
+          <br>  
+          <br>  
+          <button mat-button (click)="toggleMusic()" color="success" *ngIf="isMusicOn">Stop Music</button>
+          <button mat-button (click)="toggleMusic()" color="success" *ngIf="!isMusicOn">Play Music</button>
         </div>
 
         <!--transition before music section-->
