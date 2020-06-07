@@ -4,6 +4,9 @@
 
 export const environment = {
   production: false,
+  dialogflow :{
+    oliver: '4a03c7f77aaa423da8ca8397ab9906fd'
+  },
   baseUrl:"https://localhost:44340",
   userRegistrationApi : {
     route:"/api/User",
@@ -17,6 +20,8 @@ export const environment = {
     getResultEndpoint:"/result/"
   }
 };
+
+
 
 /*
  * For easier debugging in development mode, you can import the following file

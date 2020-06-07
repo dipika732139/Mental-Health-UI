@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { BlogsComponent } from './Components/blogs/blogs.component';
 import { MusicComponent } from './Components/music/music.component';
+import { VideosComponent } from './Components/videos/videos.component';
 import { MemesComponent } from './Components/memes/memes.component';
 import { SelfassessmentComponent } from './Components/selfassessment/selfassessment.component';
 import { OppurtunitiesComponent } from './Components/oppurtunities/oppurtunities.component';
@@ -20,6 +21,7 @@ const routes: Routes = [
   { path: 'blogs', component: BlogsComponent },
   { path: 'memes', component: MemesComponent },
   { path: 'music', component: MusicComponent },
+  { path: 'videos', component: VideosComponent },
   { path: 'oppurtunities', component: OppurtunitiesComponent },
   { path: 'selfassessment', component: SelfassessmentComponent },
   { path: 'skills', component: SkillsComponent },

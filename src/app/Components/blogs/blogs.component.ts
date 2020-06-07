@@ -14,11 +14,28 @@ export class BlogsComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  
+  //showing sections booleans
+  public div1: boolean= true;
+  public books: boolean= false;
+
+  //showing sections transitions booleans
+  public transition4show: boolean= false;
+
+#region 
+   showBooksTransition(): void {
+      this.div1=false;
+      this.transition4show=true; 
+    }
+    showBooks(): void {
+      this.transition4show=false;
+      this.books=true;
+    }
 
   pictures = [
     {
       id : 1,
-      title :'The Gift Of Light',
+      title :'Gift Of Light',
       img : '../../assets/images/small1.jpg',
       msg : 'Didn\'t we all need darkness to find a way towards light?'
     },
@@ -125,6 +142,8 @@ export class BlogsComponent implements OnInit {
       msg : 'The ride was never safe but it was worth the risk.'
     }
   ];
+
+
 }
 
 
