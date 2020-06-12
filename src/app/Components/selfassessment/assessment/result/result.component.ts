@@ -6,7 +6,7 @@ import { Component, OnInit,Input } from '@angular/core';
   styleUrls: ['./result.component.css']
 })
 export class ResultComponent implements OnInit {
-@Input() moodImageUrl:string
+@Input() recommendations:string[]
 @Input() score:number
 @Input() description : string
 @Input() summary:string
@@ -14,5 +14,7 @@ export class ResultComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  goToLink(url: string){
+    window.open(url, "_blank");
+}
 }

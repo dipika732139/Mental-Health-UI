@@ -24,7 +24,7 @@ export class AssessmentComponent implements OnInit {
   public question: string ;
   public options:Option[] 
   public selectedOptionNumber : number
-  public moodImageUrl:string
+  public recommendations :string[]
   public score:number
   public description : string
   public summary:string
@@ -75,8 +75,9 @@ export class AssessmentComponent implements OnInit {
     var request=new ResultRequest(this.globalService.getUserId(),this.globalService.getTestType())
     this.testService.GetResult(request,this.globalService.getTestId()).subscribe(
       response=>{
-        if(response.moodImageUrl!=null){
-          this.moodImageUrl=response.moodImageUrl
+        if(response!=null){
+          if(response.moodImageUrl!=null)
+            this.recommendations=response.moodImageUrl.split(',')
           this.score=response.score
           this.description=response.description
           this.summary=response.summary

@@ -13,7 +13,7 @@
     <button mat-button  class="btn" color="success" style="float: right" *ngIf="hasQuestion" (click)="SubmitAndNextQuestion()">Submit</button>
     </div>
     <div *ngIf="displayResult" class="header-content text-md-center">
-    <app-result [moodImageUrl]="moodImageUrl" [score]="score" [description]="description" [summary]="summary"></app-result>
+    <app-result [recommendations]="recommendations" [score]="score" [description]="description" [summary]="summary"></app-result>
     <br>
     <button mat-button class="btn" color="success" style="float: center" (click)="OnClose()">Close</button>
     </div>
