@@ -4,5 +4,11 @@
     <p>Your score is : {{score}}</p>
     <p>{{description}}</p>
     <p>{{summary}}</p>
-
+    <br>
+<p *ngIf="recommendations!=null">Some recommendations</p>
+    <ul style="list-style: none;">
+        <li *ngFor ="let recommendation of recommendations;let i = index">
+            <a href="https://{{recommendation}}" target="_blank" style="color:white;text-decoration:none;">Recommendation {{i+1}}</a>
+        </li>
+    </ul>
 </div>
