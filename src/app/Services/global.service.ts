@@ -8,14 +8,26 @@ export class GlobalService {
 
   constructor() { }
   isMusicOn:boolean = true
-  userId : string = "DIPIKA"
-  testId : string
-  testType : string
+  private userId : string 
+  private testId : string
+  private testType : string
+  private isUserLoggedIn : boolean = false
   getUserId():string{
     return this.userId;
   }
   setUserId(id : string){
     this.userId=id
+  }
+  isLoggedIn():boolean{
+    return this.isUserLoggedIn
+  }
+  logIn(id : string){
+    this.isUserLoggedIn=true
+    this.setUserId(id)
+  }
+  logOut(){
+    this.isUserLoggedIn=false
+    this.setUserId(null)
   }
 toggleMusic(){
   this.isMusicOn=!this.isMusicOn

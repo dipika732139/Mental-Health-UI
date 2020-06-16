@@ -51,7 +51,7 @@ export class AssessmentComponent implements OnInit {
   }
   sumitAnswer(){
     var request = new AnswerRequest(this.globalService.getUserId(),this.globalService.getTestType(),this.questionNumber-1,this.selectedOptionNumber);
-    this.testService.SaveAnswer(request,this.globalService.testId).subscribe(
+    this.testService.SaveAnswer(request,this.globalService.getTestId()).subscribe(
       response=>{
       }
     )

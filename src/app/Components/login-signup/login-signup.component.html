@@ -1,0 +1,52 @@
+<div *ngIf="isBannerDisplayed">
+    <p>{{bannerMessage}}</p>
+</div>
+<div>
+    <div *ngIf="isLoggedIn"> 
+        you are logged in
+        <button (click)="logOut()"> LogOut</button>
+    </div>
+    <div *ngIf="!isLoggedIn">
+        <div *ngIf="displayLogin">
+            <h1>Login</h1>
+            <br><br>
+            <form (ngSubmit)="login()">
+                <input type="text" name="userId" placeholder="UserId" [(ngModel)]="userId"><br><br>
+                <input type="password" name="password" placeholder="Password" [(ngModel)]="password"><br><br>
+                <input type="submit" value="Login">
+            </form>
+            <br><br>
+            <p>Don't have an account. SignUp for free</p>
+            <button (click)="toggleDisplayLogin()"> SignUp</button>
+        </div>
+        <div *ngIf="!displayLogin">
+            <h1>SignUp</h1>
+            <br><br>
+            <form (ngSubmit)="signUp()">
+                <input type="text" name="name" placeholder="Name" [(ngModel)]="name"><br><br>
+                <input type="password" name="password" placeholder="Password" [(ngModel)]="password"><br><br>
+                <input type="email" name="emailId" placeholder="emailId" [(ngModel)]="emailId"><br><br>
+                <label>Age : </label><br>
+                <input type="number" name="age" placeholder="Age" [(ngModel)]="age"><br><br>
+                GENDER
+                <ul style="list-style: none;">
+                    <li>
+                        <input type="radio" name="gender" value="Others" [(ngModel)]="gender"> Others<br>
+                        <input type="radio" name="gender" value="Male" [(ngModel)]="gender"> Male<br>
+                        <input type="radio" name="gender" value="Female" [(ngModel)]="gender"> Female<br>
+                    </li>
+                </ul>
+                <input type="text" name="country" placeholder="Country" [(ngModel)]="country"><br><br>
+                <label>PinCode : </label><br>
+                <input type="number" name="pincode" placeholder="Pincode" [(ngModel)]="pincode"><br><br>
+                <label>Phone Number : </label><br>
+                <input type="number" name="phoneNumber" placeholder="Phone Number" [(ngModel)]="phoneNumber"><br><br>
+                <input type="checkbox" name="connextWithOthers" value="{{true}}" [(ngModel)]="connectWithOthers" >Connect with others <br><br>
+                <input type="submit" value="SignUp">
+            </form>
+            <br><br>
+            <p>Already have an account</p>
+            <button (click)="toggleDisplayLogin()"> Login</button>
+        </div>
+    </div>
+</div>

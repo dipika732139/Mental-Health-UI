@@ -30,7 +30,8 @@ import { AssessmentComponent } from './Components/selfassessment/assessment/asse
 import { VideosComponent } from './Components/videos/videos.component';
 import { QuestionComponent } from './Components/selfassessment/assessment/question/question.component';
 import { ResultComponent } from './Components/selfassessment/assessment/result/result.component';
-
+import { LoginSignupComponent } from './Components/login-signup/login-signup.component';
+import { ProfileComponent } from './Components/profile/profile.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,7 +50,9 @@ import { ResultComponent } from './Components/selfassessment/assessment/result/r
     VideosComponent,
     AssessmentComponent,
     QuestionComponent,
-    ResultComponent
+    ResultComponent,
+    LoginSignupComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

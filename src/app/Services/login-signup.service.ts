@@ -47,7 +47,9 @@ export class LoginSignupService {
       var errorMessage:string
       try{
         var error = errorResponse.error as Error;
-         errorMessage = `Error: ${error.Infos[0].ErrorMessage}`;
+        errorMessage = error.ErrorMessage
+        if(error.Infos.length>0)
+          errorMessage = error.Infos[0].ErrorMessage
       }
       catch{
         errorMessage=`Error Code: ${errorResponse.status}\nMessage: ${errorResponse.error.title}`;
